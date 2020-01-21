@@ -1,0 +1,150 @@
+//@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
+html {
+    font-family: sans-serif;
+}
+
+body{
+    width: 850px;
+    margin: 0 auto;
+}
+
+table {
+    width: 850px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    tr {
+        :first-child {
+            width: 25%;
+          }
+
+        th {
+            text-align: left;
+            padding: 12px;
+            
+        }
+
+        td {
+            padding: 12px;
+            margin-right: 20px;
+        }
+    }
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.contain {
+    display: flex;
+    justify-content: center; 
+
+    div {
+        margin-top: 20px;
+        position: relative;
+        width: 850px;
+        border: 1px dotted gray;
+        height: 290px;
+
+        p:nth-child(1) {
+            position: absolute;
+            margin: 30px;
+            left: 0;
+            bottom: 0;
+        }
+
+        p:nth-child(2) {
+            font-size: 1.1em;
+            position: absolute;
+            margin: 30px;
+            top: 0;
+            right: 0;
+        }
+    }
+
+}
+
+.data {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 850px;
+
+    img {
+        height: auto;
+        width: 100%;
+    }
+}
+
+.data1 {
+    padding-top: 10px;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 850px;
+    border-top: 1px solid black;
+
+    p:nth-child(2) {
+        font-size: 14px;
+    }
+
+    p:nth-child(3) {
+        font-size: 14px;
+    }
+}
+
+
+.hidden {
+    display: none;
+}
+
+header {
+    display: none;
+}
+
+@media only print {
+
+    header{
+        display: flex;
+        flex-direction: row;
+        height: 160px;
+        max-height: 160px;
+        width: 100%;
+
+        div{
+            flex: 1 1 auto; 
+
+            p {
+                font-size: 20px;
+                overflow: hidden;
+
+                &.maxt{
+                    margin-top: 9px;
+                    font-size: 22px;
+                    color: darkblue;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                :nth-child(3) {
+                    padding-left:8px;
+                }
+                
+            }
+            .cherta{
+                margin-top: 15px;
+                border-bottom: 3pt double  orange;            
+            }
+
+        }
+
+        img{
+            flex: 0 0 auto;
+            height: 160px;
+        }
+    }
+
+    nav{
+        display: none;
+    } 
+}

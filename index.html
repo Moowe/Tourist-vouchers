@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./forma.css">
+    <link rel="stylesheet" href="./foopicker.css">
+</head>
+<body>
+    <nav>
+        <img src="./maxtravel-logo-bg.png" alt="logo" class="logo hide">
+        <img src="./maxtravel-logo-en.png" alt="logo" class="logo_en hide">
+        <button id="newVoucher">Нов ваучер</button>
+        <p>Ваучер № <span id="counter"></span><span id="todayDateHeader"></span></p>
+        <!--<button>Изпрати</button>-->
+        <button id="printSelect">Печат</button>
+        <button id="list">Списък</button>
+        <div id="popUpMenu" class="hide">
+            <div>
+                <input class="for_print" type="submit" form="printForm" value="Печат BG" data-href="./print/printBg.html"/>
+                <input class="for_print" type="submit" form="printForm" value="Печат EN" data-href="./print/printEn.html"/>
+            </div>
+            <div>
+                <button id="pdfBg">PDF BG</button>
+                <button id="pdfEn">PDF EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <form id="printForm" name="printForm" onsubmit="return false">
+        <div class="left">
+            <div class="frame">
+                <p>Имена на туристите / Names of the tourist</p>
+                <textarea name="tnames" id="touristNames"></textarea>
+                <i class="dot"> </i>
+                <div class="cflex">
+                        <div class="input2lines">
+                            <label for="adult">
+                                <span>Възрастни</span>
+                                <span>Adult</span>
+                            </label>
+                            <input type="text" id="adult"/>
+                        </div>
+                        <div class="input2lines">
+                            <label for="childrenReg">
+                                <span>Деца (редовно легло)</span>
+                                <span>Children (regular bed)</span>
+                            </label>
+                            <input type="text" id="childrenReg"/>
+                        </div>
+                        <div class="input2lines">
+                            <label for="childrenExtra">
+                                <span>Деца (доп. легло)</span>
+                                <span>Children (extra bed)</span>
+                            </label>
+                            <input type="text" id="childrenExtra"/>
+                        </div>
+                </div>
+            </div>
+            <div class="frame">
+                    <p>Описание на услугата / Service description</p>
+                    <textarea name="tnames" id="serviceDescription"></textarea>
+            </div>
+            <div class="frame">
+                    <p>Други предплатени услуги / Other prepaid services</p>
+                    <textarea name="tnames" id="otherServices"></textarea>
+            </div>
+            <div class="frame">
+                    <p>Контрагент / Contracting party</p>
+                    <input type="text" size="40" id="contractingParty">
+            </div>
+            <div class="frame">
+                <p>Контрагент адрес / Contracting party address</p>
+                <input type="text" size="40" id="contractingPartyAddress">
+            </div>
+            <div class="frame">
+                <p>Срок и начин на плащане / Terms and type of departure</p>
+                <div class="frame_check">
+                    <div class="check2lines">
+                        <div class="checkbox_radio checked" data-check = "cash">
+                        </div>
+                        <p>
+                            <span>В брой</span>
+                            <span>Cash</span>
+                        </p>
+                    </div>
+                    <div class="check2lines">
+                        <div class="checkbox_radio" data-check = "bank"></div>
+                        <p>
+                            <span>По банков път</span>
+                            <span>Card</span>
+                        </p>
+                    </div>
+                </div>   
+            </div>
+            <div class="frame flex_end">
+                <p>Забележки / Notes</p>
+                <textarea name="tnames" id="notes"></textarea>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="frame">
+                <p>Вид услуга / Type of service</p>
+                
+                <div class="check2lines">
+                        <div class="checkbox" data-check = "excursion"></div>
+                        <p>
+                            <span>Екскурзия</span>
+                            <span>Excursion</span>
+                        </p>
+                </div>
+                <div class="check2lines">
+                        <div class="checkbox" data-check = "vacation"></div>
+                        <p>
+                            <span>Почивка</span>
+                            <span>Vacation</span>
+                        </p>
+                </div>
+                <div class="check2lines">
+                        <div class="checkbox" data-check = "reservation"></div>
+                        <p>
+                            <span>Хотелска резервация</span>
+                            <span>Hotel reservation</span>
+                        </p>
+                </div>
+                <div class="check2lines">
+                        <div class="checkbox" data-check = "tickets"></div>
+                        <p>
+                            <span>Билет</span>
+                            <span>Tickets</span>
+                        </p>
+                </div>
+            </div>
+            <div class="frame">
+                <p>Дати / Dates</p>
+                <div class="frame">
+                        <p>Пристигане / Arrival</p>
+                        <div class="container">
+                            <input type="text" id="datepicker" readonly/>
+                        </div>
+                </div>
+                <div class="frame">
+                        <p>Напускане / Departure</p>
+                        <div class="container">
+                            <input class="calendar" type="text" id="datepicker2" readonly/>
+                        </div>
+                </div>
+            </div>
+            <div class="frame">
+                    <p>Предплатени услуги / Prepaid services</p>
+                    
+                    <div class="check2lines">
+                            <div class="checkbox" data-check = "transportation"></div>
+                            <p>
+                                <span>Транспорт</span>
+                                <span>Transportation</span>
+                            </p>
+                    </div>
+                    <div class="check2lines">
+                            <div class="checkbox" data-check = "accomodation"></div>
+                            <p>
+                                <span>Настаняване</span>
+                                <span>Accomodation</span>
+                            </p>
+                    </div>
+                    <div class="check2lines">
+                            <div class="checkbox" data-check = "excursionProgram"></div>
+                            <p>
+                                <span>Туристическа програма</span>
+                                <span>Excursion program</span>
+                            </p>
+                    </div>
+                    <div class="check2lines">
+                            <div class="checkbox" data-check = "guideServices"></div>
+                            <p>
+                                <span>Екскурзоводско обслужване</span>
+                                <span>Guide services</span>
+                            </p>
+                    </div>
+                    <div class="check2lines">
+                            <div class="checkbox" data-check = "medInsurance"></div>
+                            <p>
+                                <span>Застраховка мед. разходи</span>
+                                <span>Med.insurance</span>
+                            </p>
+                    </div>
+                    <div class="check2lines">
+                            <div class="checkbox" data-check = "transfers"></div>
+                            <p>
+                                <span>Трансфери</span>
+                                <span>Transfers</span>
+                            </p>
+                    </div>                                        
+            </div>
+            <div class="frame flex_end">
+                    <p>Туристически агент / Tour agent</p>
+                    <h3>"Име на тур агенция"</h3>
+                    <p>Адрес 1<br />Адрес 2<br />тел.:02 000 00 00<br />моб.:+359 879 20 02 56</p>
+            </div>            
+        </div>
+
+            <img class="picBG hide" src="./PHONE-BAR-BG.jpg">
+            <img class="picEN hide" src="./PHONE-BAR-EN.jpg">
+        
+    </form>
+
+<script src="./foopicker.js"></script>
+<script src="./script.js"></script>
+<script src="./print/languageselect.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+<script src="./pdf fonts/arial-normal.js"></script>
+<script src="./pdf fonts/arial-bold.js"></script>
+<script src="./base64var.js"></script>
+<script src="./pdfGen.js"></script>
+</body>
+</html>

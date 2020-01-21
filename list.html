@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .list {
+            background-color: rgb(233, 233, 233);
+        }
+
+        table {
+            width: 850px;
+            margin: 0 auto;
+            margin-top: 40px;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid gray;
+            padding: 0.5%;
+        }
+
+        td:nth-child(1) {
+            width: 50px;
+        }
+
+        td:nth-child(3) {
+            width: 115px;
+        }
+
+        td:nth-child(4) {
+            text-align: center;
+            width: 150px;
+        }
+
+        input {
+            margin: 1%;
+            width: 95.5%;
+        }
+
+
+        span {
+            text-align: left!important;
+        }
+
+        .color {
+           background-color: rgb(209, 252, 209);
+        }
+
+        .imp {
+            text-align: left!important;
+        }
+
+        .hide {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="4">
+                Търсене:
+            </td>
+        </tr>
+        <tr>
+            <td class="color">
+                <label>
+                    <span>№</span>
+                        <input id="noumber"></input>
+                </label>
+            </td>
+            <td class="color">
+                <label>
+                    <span>По име:</span>
+                    <input id="ime"></input>
+                </label>
+            </td>
+            <td class="color">
+                <label>
+                    <span>По контрагент:</span>
+                    <input id="kontragent"></input>
+                </label>
+            </td>
+            <td class="color imp">
+                <label>
+                    <span>Дата на пристигане:</span>
+                    <input id="date"></input>
+                </label>
+            </td>
+        </tr>
+    </table>
+    <script>
+
+        (function(){
+            let listData;
+            let vids = localStorage.getItem('voucher-id');
+            if(vids){
+                vid = parseInt(vids);
+            } else {
+                vid = 1;    
+            } 
+            for(let i = 1; i <= vid; i++){
+                if(listData = localStorage.getItem("voucher-" + i)){
+                    listData = JSON.parse(listData);
+                    let one = document.createElement("tr");
+                    one.innerHTML = "<td class='noumber'>" + listData.id + "</td><td class='ime'>" + listData.names + "</td><td class='kontragent'>" + 
+                    listData.contractingParty + "</td><td class='date'>" + listData.arrival + "</td>";
+                    one.id = listData.id;
+                    one.addEventListener("click", function(){
+                        localStorage.setItem("voucher-edit-id", one.id);
+                        window.location.href = "index.html";
+                    });
+                    document.querySelector("table").appendChild(one);
+                    if(i%2){
+                        one.classList.add("list");
+                    }
+                }
+            }
+
+            // search func
+
+            document.querySelectorAll("input").forEach(aInput => {
+                aInput.addEventListener("keyup", function(){
+                document.querySelectorAll("." + aInput.id).forEach(element => {
+                    element.parentElement.classList.remove("hide");
+                    if(element.innerHTML.toLowerCase().indexOf(aInput.value.toLowerCase()) == -1){
+                            element.parentElement.classList.add("hide");
+                        }
+                    });
+                }); 
+            });
+
+               
+        })();
+        
+    </script>
+</body>
+</html>

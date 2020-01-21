@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:200,400,600&display=swap");
+html {
+  font-family: 'Oswald', sans-serif;
+}
+
+body {
+  width: 850px;
+  margin: 0 auto;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: beige;
+  padding: 10px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+}
+
+nav p {
+  margin-left: 15px;
+  margin-top: 2.5px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+nav p :nth-child(2) {
+  padding-left: 7px;
+}
+
+nav input {
+  margin: 0 2px;
+}
+
+nav button {
+  margin: 0 2px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+.hide {
+  display: none !important;
+}
+
+.dot {
+  display: block;
+  width: 95%;
+  margin: 5px auto;
+  height: 1pt;
+  border-bottom: 1pt dotted gray;
+}
+
+.cflex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.check2lines {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 5px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.check2lines > div {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1pt solid gray;
+}
+
+.check2lines p {
+  margin: 0 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.check2lines p span {
+  display: block;
+}
+
+.checkbox.checked:after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 22px;
+  position: relative;
+  top: 5px;
+  left: 15px;
+  border: solid #000;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.checkbox_radio.checked:after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 22px;
+  position: relative;
+  top: 5px;
+  left: 15px;
+  border: solid #000;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.input2lines {
+  font-weight: 200;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 5px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.input2lines label {
+  margin: 0 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.input2lines input {
+  font-size: 20pt;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1pt solid gray;
+}
+
+.frame {
+  margin: 20px 0;
+  padding: 15px 10px 5px 10px;
+  border-radius: 10px;
+  border: 1pt solid gray;
+}
+
+.frame > p:first-of-type {
+  position: absolute;
+  margin-top: -28px;
+  background-color: white;
+  padding: 2px 10px;
+}
+
+.frame textarea {
+  font-family: sans-serif;
+  font-size: 12pt;
+  width: 100%;
+  height: 10vh;
+  resize: none;
+  border: none;
+}
+
+.frame > input {
+  border: none;
+}
+
+.frame > .frame_check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+form {
+  padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+form > div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 3px;
+}
+
+form .left {
+  margin-right: 8px;
+}
+
+form .right {
+  margin-left: 8px;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container input {
+  border: none;
+}
+
+#popUpMenu {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5px;
+  background-color: #cccccc;
+  z-index: 10;
+}
+
+#popUpMenu input, #popUpMenu button {
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px 20px;
+  margin: 0px;
+  width: 115px;
+}
+
+#popUpMenu input {
+  margin-bottom: 5px;
+}
+/*# sourceMappingURL=forma.css.map */

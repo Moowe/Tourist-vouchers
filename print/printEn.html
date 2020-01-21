@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="./print.css">
+    <script>
+        let lng = 0;
+    </script>
+</head>
+<body>
+    <header>
+        <div>
+            <p class="maxt">Travel agency and tour operator <span class="bold">"Agency name"</span></p>
+            <p>Tour operator registration № <span class="bold">insert registration number here</span></p>
+            <p class="maxt bold">Voucher for tourist service<br>№<span id="counter"></span><span id="todayDate"></span></span></p>
+            <div class="cherta"></div>
+        </div>
+        <img src="../maxtravel-logo.png" alt="logo" class="logo">
+    </header>
+
+    <table>
+        <tr>
+            <td class="bold">Names of the tourists</td>
+            <td class="bold" id="names"></td> 
+        </tr>
+        <tr>
+            <td class="bold">Service description</td>
+            <td id="description"></td>
+        </tr>
+        <tr>
+            <td>Type of service</td>
+            <td id="type"></td>
+        </tr>
+        <tr>
+            <td>Prepaid services</td>
+            <td id="extras"></td>
+        </tr>
+        <tr class="hidden">
+            <td>Notes</td>
+            <td id="notes"></td>
+        </tr>
+        <tr>
+            <td class="bold">Dates</td>
+            <td id="dates"></td>
+        </tr>
+        <tr>
+            <td class="bold">Contracting party</td>
+            <td id="contractor"></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td id="contractorAddress"></td>
+        </tr>
+    </table>
+
+    <div class="contain">
+        <div>
+            <p>Signature and stamp: </p>
+            <p class="bold">www.non-existing-wewb.com</p>
+        </div>
+    </div>
+
+    <div class="data">
+        <img src="../insert_pic.jpg">
+    </div>
+
+    <footer class="data1">
+        <p class="bold">Travel agency and tour operator "Agency name"</p>
+        <p>Address 1, e-mail: email@email.com, phone: +359 2 000 00 00, mobile: +359 879 20 02 56</p>
+    </footer>
+    
+
+    <script src="./languageselect.js"></script>
+    <script src="./print.js"></script>
+</body>
+</html>
